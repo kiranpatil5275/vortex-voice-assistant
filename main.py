@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
-import musiclibrary
+import library
 
 #pip install pocketsphinx
 
@@ -27,8 +27,8 @@ def processcommand(c):
     elif c.lower().startswith("play"):
      name = c.lower().replace("play", " ").strip()
 
-    if name in musiclibrary.library:
-        link = musiclibrary.library[name]
+    if name in library.library:
+        link = library.library[name]
         webbrowser.open(link)
        
     else:
@@ -63,10 +63,3 @@ if __name__ == "__main__":
         
         except Exception as e:
             print("Error; {0}".format(e))
-
-
-
-
-
-    
-    
